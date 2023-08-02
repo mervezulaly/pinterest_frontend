@@ -23,5 +23,6 @@ urlpatterns = [
     path('register/',userRegister, name='register'),
     path('login/',userLogin,name='login'),
     path('logout/',userLogout, name='logout'),
-    path('hesabım/',hesap,name='hesap')
+    path('hesabım/',hesap,name='hesap'),
+    path('pinadd',pinAdd,name='pinAdd')
 ]

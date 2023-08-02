@@ -23,6 +23,9 @@
             <a class="nav-link" onclick="exit(event)" href="{% url 'logout' %}" >Çıkış Yap</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link"  href="{% url 'pinAdd' %}" >Pin Ekle</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link"  href="{% url 'hesap' %}" >Hesabım</a>
           </li>
           {% else %}

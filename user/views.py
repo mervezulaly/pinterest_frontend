@@ -72,3 +72,7 @@ def userLogout(request):
 
 def hesap(request):
     return render(request,'hesap.html')
+
+
+def pinAdd(request):
+    return render(request,'pinAdd.html')
