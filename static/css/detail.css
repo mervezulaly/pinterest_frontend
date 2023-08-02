@@ -1,0 +1,112 @@
+.detay .carousel-item-img img {
+    width: 350px;
+    border-radius: 15px;
+}
+.beden{
+    width: 50%;
+}
+.beden input, .beden select{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.detay p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 5px;
+}
+.detay_aciklama{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.best_seller a{
+    color: black;
+    text-decoration: none;
+}
+.card{
+    width: 200px;
+    padding: 5px;
+}
+.card-img img{
+    margin: 10px 15px 0 15px;
+    width: 95%;
+    height: 250px;
+    border-radius: 10px !important;    
+}
+.carousel{
+    height: 550px;
+}
+.carousel-item-img{
+    max-height: 550px;
+}
+
+/* Kalp butonu Fav Icon*/
+.fav button{
+    background-color: transparent;
+    font-size: 25px;
+    border: none;
+}
+.fav{    
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.sepete_ekle input{
+    margin-top: 5px;
+    width: 100%;    
+    border: none;
+}
+
+@media screen and (max-width:768px) {
+    .beden{
+        width: 100%;
+    }    
+    .detay p{
+        font-size: 15px;
+     }
+     .detay_aciklama{
+        margin-top: 10px;
+     }
+}
+
+@media screen and (max-width:576px) {
+    .detay_aciklama{
+        padding: 10px 45px !important;        
+    }
+    .fav{   
+        top: 0;
+        right: 45px !important;
+    }
+    .fa-heart{        
+        font-size: 35px !important;        
+    }
+    .card{
+        width: 190px;
+        padding: 10px;
+    }
+    .card-img img{
+        width: 100%;
+        height: 230px;
+    }
+    .card-title{
+        font-size: 20px !important;
+    }
+    .card-body:nth-child(1){
+        font-size: 14px !important;
+    }
+    
+}
+@media screen and (max-width:420px) {
+       .card{
+        width: 150px;
+    }
+    .card-img img{
+        width: 100%;
+        height: 180px;
+    }
+    .card-title{
+        font-size: 18px !important;
+    }    
+    .card-body{        
+        padding: 0;
+        padding-bottom: 3px;
+    }
+    
+}

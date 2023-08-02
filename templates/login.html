@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/login-register.css' %}">
+{% endblock css %}
+
+login
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+{% if not user.is_authenticated %}
+<div class="mt-1 mb-1">   
+    <div class="login-wrap">
+        <div class="login-html">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab"><a class="active_a" href="{% url 'login' %}">Giriş Yap</a></label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"><a class="active_a" href="{% url 'register' %}">Kayıt Ol</a></label>
+            <div class="login-form">
+                <div class="sign-in-htm">
+                    <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="group">
+                        <label class="label">Kullanıcı Adı</label>
+                        <input name="kullanici" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <label class="label">Şifre</label>
+                        <input name="sifre" type="password" class="input" data-type="password">
+                    </div>                        
+                    <div class="group">
+                        <input type="submit" class="button" value="Giriş Yap">
+                    </div>
+                    </form>                        
+                    <div class="foot-lnk">
+                        <a class="text-white">Şifrenizi mi unuttunuz ?</a>
+                    </div>
+                    <div class="foot-lnk mt-2">
+                        <a class="text-white" href="{% url 'register' %}">Hesabınız yok mu ?</a>
+                    </div>
+                </div>
+            </div>       
+        </div>    
+    </div>
+</div>
+{% else %}
+<h5 class="text-center mt-5 mb-5 text-uppercase">{{user.username}} Olarak Giriş Yaptınız</h5>
+{% endif %}
+{% endblock content %}
+
