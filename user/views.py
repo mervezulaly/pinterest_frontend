@@ -3,6 +3,8 @@ from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout 
 from django.contrib.auth.models import User 
 from .models import *
+from .forms import *
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
@@ -58,8 +60,7 @@ def userLogin(request):
         if user is not None:
             login(request,user)
             messages.success(request,'Başarıyla Giriş Yapıldı')
-            return redirect('index')
-             
+            return redirect('index')             
         else:
             messages.error(request,'Kullanıcı Adı veya Şifre Hatalı')
             return redirect('login')
@@ -70,9 +71,29 @@ def userLogout(request):
     messages.success(request,'Başarıyla Çıkış Yapıldı')    
     return redirect('index')
 
+@login_required
 def hesap(request):
-    return render(request,'hesap.html')
+    pin = Post.objects.filter(olusturan = request.user)
+    context={
+        'pin':pin
+    }
+    return render(request,'hesap.html',context)
 
 
+@login_required
 def pinAdd(request):
-    return render(request,'pinAdd.html')
+    olusturan = request.user
+    if request.method == "POST":
+        form = PinForm(request.POST, request.FILES)
+        if form.is_valid():           
+            form.instance.olusturan = olusturan
+            form.save()
+            return redirect('index')
+    else:
+        form = PinForm()
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'pinadd.html', context)

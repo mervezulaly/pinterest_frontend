@@ -5,6 +5,17 @@
 {% block content %}
 <h1 class="text-center">Hesap Sayfam</h1>
 <h3 class="text-center">{{request.user}}</h3>
+{% if pin|length > 0 %}
+{% for p in pin %}
+{{p.isim}} <br>
+<img src="{{p.resim.url}}" alt=""> <br>
+{{p.aciklama|safe}}
+{{p.kategori}}
+{% endfor %}
+{% else %}
+<h3>Henüz Pin Eklemediniz</h3>
+{% endif %}
+
 {% endblock content %}
 
 

@@ -23,10 +23,11 @@ class Kategori(models.Model):
         return self.isim
     
 class Post(models.Model):
-    olusturan = models.OneToOneField(User, on_delete=models.CASCADE)
-    kategori = models.ForeignKey(Kategori,on_delete=models.SET_NULL,null=True)
+    olusturan = models.ForeignKey(User, on_delete=models.CASCADE, editable=False)
+    kategori = models.ForeignKey(Kategori, on_delete=models.SET_NULL, null=True)
     isim = models.CharField(max_length=100)
-    aciklama = RichTextField(max_length=500, null=True)
-    fiyat = models.IntegerField()    
-    resim = models.FileField(upload_to = 'urunler/',null=True)
-    
+    aciklama = RichTextField(max_length=500, null=True)    
+    resim = models.FileField(upload_to='pin/', null=True)
+
+    def __str__(self):
+        return self.isim
