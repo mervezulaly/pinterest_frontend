@@ -24,6 +24,7 @@
     <div class="container">
         {% for p in pin %}
             <img src="{{p.resim.url}}" alt="">
+            <p>{{p.olusturan}}</p>
         {% endfor %}
     </div>
     {% endblock content %}
