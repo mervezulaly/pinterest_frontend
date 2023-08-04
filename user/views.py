@@ -9,7 +9,11 @@ from django.contrib.auth.decorators import login_required
 
 
 def index(request):
-    return render (request,'index.html')
+    pin = Post.objects.all()
+    context={
+        'pin':pin
+    }
+    return render (request,'index.html',context)
 
 
 def userRegister(request):  

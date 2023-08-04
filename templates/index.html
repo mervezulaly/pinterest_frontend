@@ -22,8 +22,8 @@
 
     {% block content %}   
     <div class="container">
-        {% for  in  %}
-        
+        {% for p in pin %}
+            <img src="{{p.resim.url}}" alt="">
         {% endfor %}
     </div>
     {% endblock content %}
