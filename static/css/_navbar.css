@@ -1,12 +1,49 @@
-nav .container .navbarbrand {
-    width: 402.400px;
-    height: 80px;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+nav{
+    height:80px ;
+}
+label img{
+    padding-left:40px;
+    padding-top: 35px;
+    padding-bottom: 15px;
+    width: 95px;
+    height: 85px;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    padding-top: 40px;
+    margin-right: 10px;
+}
+ul div{
+    padding: 35px;
+    padding-left: 2px;
+    float: right;
+    padding-right: 0;
 }
 
-nav img{
-    width: 131.03px;
-    height: 35.2px;
-    position: fixed;
-    top: 40px;
-    left: 20px;
+button a{
+    color: white;
+}
+button a:hover{
+    color: white;
+}
+.btn{
+    border-radius: 25px;
+    
+}
+h1{
+    color: rgb(179, 24, 24);
+    font-size:large;
+    margin-top: 2px;
+    letter-spacing: -1px;
 }

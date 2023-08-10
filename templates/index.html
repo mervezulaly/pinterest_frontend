@@ -23,10 +23,13 @@
     {% block content %}   
     <div class="container">
         {% for p in pin %}
-            <img src="{{p.resim.url}}" alt="">
+        <a href="{% url 'detay' p.id %}">
+            <img width="150px;" src="{{p.resim.url}}" alt="">
+        </a>
             <p>{{p.olusturan}}</p>
         {% endfor %}
     </div>
+    
     {% endblock content %}
 
 

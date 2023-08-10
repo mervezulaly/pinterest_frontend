@@ -1,0 +1,19 @@
+footer{
+    position: absolute;
+    right: 0;
+    left: 20%;
+    bottom: 0;
+}
+.footer-content{
+    float: left;
+    padding: 5px;
+    font-size:small;
+    
+}
+a{
+    color:black;
+    
+}
+a:hover{
+    color: black;
+}

@@ -5,46 +5,51 @@
 {% endblock css %}
 
 
-
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Anasayfa</a>
+{% if not user.is_authenticated %}
+<nav>
+   <label for="" class="logo" >
+      <a href="">
+        <img src="/static/img/WhatsApp Image 2023-08-04 at 22.21.29.jpeg" alt="">
+        <ul><li><h1>Pinterest</h1></li></ul>
+      </a>
+      
+    </label>
+      
+   <ul>
+      <li><a href="">Hakkında</a></li>
+      <li><a href="">İş Dünyası</a></li>
+      <li><a href="">Blog</a></li>
+   </ul>
+    {% if user.is_authenticated %}
+    <label for="" class="logo" >
+      <a href="">
+        <img src="/static/img/WhatsApp Image 2023-08-04 at 22.21.29.jpeg" alt="">
+        <ul><li><h1>Ana Sayfa</h1></li></ul>
+      </a>
+      
+    </label>
+    <ul>
+          <li>
+            <a  onclick="exit(event)" href="{% url 'logout' %}" >Çıkış Yap</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">İş Dünyası</a>
+          <li>
+            <a href="{% url 'pinAdd' %}" >Pin Ekle</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
+          <li>
+            <a href="{% url 'hesap' %}" >Hesabım</a>
           </li>
-          
-          {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link" onclick="exit(event)" href="{% url 'logout' %}" >Çıkış Yap</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  href="{% url 'pinAdd' %}" >Pin Ekle</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  href="{% url 'hesap' %}" >Hesabım</a>
-          </li>
-          {% else %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'login' %}">Oturum Aç</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'register' %}">Kaydol</a>
-          </li>
-          {% endif %}
         </ul>
-      </div>
-    </div>
+          {% else %}
+          <ul>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end" >
+            <button class="btn btn-danger me-md-2" type="button"><a  href="{% url 'login' %}" style="text-decoration: none;">Oturum Aç</a></button>
+          </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-secondary" type="button"><a  href="{% url 'register' %}" style="text-decoration: none;">Kaydol</a></button>
+          </div>
+        </ul>
+          {% endif %}
+        
   </nav>
 
 

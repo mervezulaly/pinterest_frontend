@@ -1,16 +1,57 @@
 {% extends 'index.html' %}
 {% load static %}
 
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/hesap.css' %}">
+{% endblock css %}
+
+
 
 {% block content %}
-<h1 class="text-center">Hesap Sayfam</h1>
-<h3 class="text-center">{{request.user}}</h3>
+<div class="container">
+    {% for h in hesap %}
+    <div class="profil-resmi">        
+            {% if not h.profilResmi %}
+                <div class="d-flex justify-content-center">
+                    <h1 class="hesap-isim">{{h.user}}</h1>
+                </div>
+            {% else %}
+            <div class="text-center">
+                <img class="hesap-profilResmi" src="{{ h.profilResmi.url }}" alt="">
+            </div>
+            {% endif %}        
+    </div>
+    <div class="text-center pt-3">
+        <h3>{{h.ad}} {{h.soyad}}</h3>
+    </div>
+    <div class="text-center">
+        <h6>@{{request.user}}</h6>
+    </div>
+    <div class="takip">
+
+    </div>
+    {% endfor %}    
+    <div class="hesap-button pt-3">
+        {% if user.is_authenticated %}
+        <button class="btn btn-secondary">Paylaş</button>
+        <button class="btn btn-secondary">Profili düzenle</button>
+        {% else %}
+        <button class="btn btn-secondary">Mesaj</button>
+        <button class="btn btn-danger">Takip et</button>
+        {% endif %}
+    </div>
+    <div class="hesap-kaydedilen pt-5">
+        <a href="{% url 'created' %}">Oluşturuldu</a>
+        <a href="{% url 'saved' %}">Kaydedildi</a>
+    </div>    
+</div>
+
+
+
+
 {% if pin|length > 0 %}
 {% for p in pin %}
-{{p.isim}} <br>
-<img src="{{p.resim.url}}" alt=""> <br>
-{{p.aciklama|safe}}
-{{p.kategori}}
+
 {% endfor %}
 {% else %}
 <h3>Henüz Pin Eklemediniz</h3>

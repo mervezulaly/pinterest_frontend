@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/detail.css' %}">
+{% endblock css %}
+
+
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row detail">
+        <div class="col-6 detail-left">
+            <img width="100%;" src="{{post.resim.url}}" alt="">
+        </div>
+        <div class="col-6 detail-right">
+            <div class="d-flex align-items-center justify-content-between pt-5">
+                <div class="detail-profil d-flex justify-content-start align-items-center">                    
+                    <img width="50px;" src="{{hesap.profilResmi.url}}" alt="">                   
+                    <a href=""><h5>@{{post.olusturan}}</h5></a>
+                </div>
+                
+                <button class="btn btn-danger">Kaydet</button>
+            </div>
+        </div>
+    </div>
+    
+</div>
+{% endblock content %}
+
