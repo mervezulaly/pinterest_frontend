@@ -19,8 +19,9 @@
 </head>
 <body>    
     {% include 'includes/_navbar.html' %}
-    <h1>Pinterest</h1>
+    
     {% block content %} 
+    {% if user.is_authenticated %}
     <div class="container">
         {% for p in pin %}
         <a href="{% url 'detay' p.id %}">
@@ -29,6 +30,10 @@
             <p>{{p.olusturan}}</p>
         {% endfor %}
     </div>
+    {% else %}
+    
+    {% endif %}
+    
     
     {% endblock content %}
 
