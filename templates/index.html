@@ -21,6 +21,19 @@
     {% include 'includes/_navbar.html' %}
     
     {% block content %} 
+     <!-- Containerlar -->
+    <!-- Container-1 -->
+    <div class="container1">
+        <div class="container text-center">
+            <div class="yazisiyah" style="font-family: 'Montserrat', sans-serif;" >Get your next</div>
+            <div class="yazihareketli" style="font-family: 'Montserrat', sans-serif;">
+                <span style="color: darkgoldenrod;">weeknight dinner idea</span>
+                <span style="color: rgb(97, 140, 123);;">home decor idea</span>
+                <span style="color: rgb(0, 118, 211);">new look outfit idea</span>
+                <span style="color: rgb(64, 122, 87);">green thumb idea</span>
+            </div>
+          </div>
+    </div>
     {% if user.is_authenticated %}
     <div class="container">
         {% for p in pin %}
