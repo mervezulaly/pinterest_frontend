@@ -5,6 +5,22 @@
     text-decoration: none;
     list-style: none;
 }
+
+
+/* Navbar Css */
+.navbar .cont .navbarbrand {
+    width: 402.400px;
+    height: 80px;
+}
+
+.navbar img{
+    width: 131.03px;
+    height: 35.2px;
+    position: fixed;
+    top: 40px;
+    left: 20px;
+} 
+
 nav{
     height:80px ;
 }

@@ -6,4 +6,81 @@ body, html {
     background-color: white;
 }
 
+/* Container1 Css */
+.container1{
+    width: 650px;
+    height: 170px;
+    margin: 400px;
+    margin-left: 320px;
+    margin-top: 0px;
+    overflow: hidden; 
+    background-color: white;
+    position: absolute;
+    top: 250px;
+    left: 40px;
+
+}
+.container1 .yazisiyah{
+    position: relative;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.container1 .yazihareketli span {
+    font-size: 50px;
+    font-weight: 600;
+    position: relative; 
+    animation: animasyon 10s ease-in-out infinite;
+    animation-fill-mode: backwards;
+    transform: translateY(-100px);
+    opacity: 0;
+}
+
+
+.container1 span:nth-child(2) {
+    animation-delay: 4s;
+}
+
+.container1 span:nth-child(3) {
+    animation-delay: 8s;
+}
+
+.container1 span:nth-child(4) {
+    animation-delay: 12s;
+}
+
+.container1 span:nth-child(5) {
+    animation-delay: 18s;
+}
+
+
+@keyframes animasyon {
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    5%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+    30%{
+        transform: translateY(0px);
+        opacity: 0;
+    }
+
+    40%{
+        transform: translateY(-100px);
+        opacity: 0;
+
+    }
+
+    100%{
+        transform: translateY(-100px);
+        opacity: 1;
+    }
+
+}
+
 
