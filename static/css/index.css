@@ -83,4 +83,35 @@ body, html {
 
 }
 
+.ziplayanok {
+    border-radius: 50%;
+    position: fixed;
+    width: 48px;
+    height: 48px;
+    top: 60%;
+    animation-name: jump;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+ 
+#ok {
+    background: blue;
+    left: 15%;
+    animation-timing-function: linear;
+}
+@keyframes jump {
+    50% {
+      top: 20%;
+    }
+}
+
+
+.container2 .slayt{
+    width: 500px;
+    height: 200px;
+    background-color: white;
+}
+
+
+
 
